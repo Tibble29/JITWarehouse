@@ -1,0 +1,66 @@
+
+<div class="page-container">
+  <app-header></app-header>
+    <app-sidebar></app-sidebar>
+        <div class="content-column">
+            <div class="header">
+                <h1>Delivery Dockets</h1>
+                <p class="subtitle">Print Driver Movements</p>
+
+                <div class="control-panel">
+                  <mat-form-field>
+                    <input matInput [matDatepicker]="purchaseDatePicker" placeholder="Choose a date">
+                    <mat-datepicker-toggle matSuffix [for]="purchaseDatePicker"></mat-datepicker-toggle>
+                    <mat-datepicker #purchaseDatePicker></mat-datepicker>
+                  </mat-form-field>
+                  <br />
+
+                  <button mat-raised-button color="primary" class="button-comment night-route" (click)="TableToggle()"><i class="fa fa-moon-o" aria-hidden="true"></i> Night Routes</button>              
+                  <button mat-raised-button color="primary" class="button-comment day-route"><i class="fa fa-sun-o" aria-hidden="true"></i> Day Routes</button>              
+                  <br />
+                  <button mat-raised-button color="primary" class="button-comment btn-all">Managers North</button>              
+                  <button mat-raised-button color="primary" class="button-comment btn-all">Managers South</button>              
+                  <button mat-raised-button color="primary" class="button-comment btn-all">Managers Local</button>              
+                  <button mat-raised-button color="primary" class="button-comment btn-all">Managers All </button>              
+                  <br />
+                  <button mat-raised-button color="primary" class="button-comment btn-all">Print Fuel Sheet</button>              
+                  <button mat-raised-button color="primary" class="button-comment btn-all">Wgt Summary</button>              
+                  <button mat-raised-button color="primary" class="button-comment btn-all">Empty Route Sheets</button>              
+                </div>
+
+
+                <div *ngIf="showTable">
+                <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+                  <ng-container matColumnDef="routeEmployee">
+                    <th mat-header-cell *matHeaderCellDef>Route/Employee</th>
+                    <td mat-cell *matCellDef="let element">{{ element.routeEmployee }}</td>
+                  </ng-container>
+                
+                  <ng-container matColumnDef="printed">
+                    <th mat-header-cell *matHeaderCellDef>Printed</th>
+                    <td mat-cell *matCellDef="let element">{{ element.printed }}</td>
+                  </ng-container>
+                
+                  <ng-container matColumnDef="emergencySheet">
+                    <th mat-header-cell *matHeaderCellDef>Emergency Sheet</th>
+                    <td mat-cell *matCellDef="let element"><button mat-raised-button color="primary" class="btn-table">Emergency Runsheet </button></td>
+                  </ng-container>
+                
+                  <ng-container matColumnDef="emails">
+                    <th mat-header-cell *matHeaderCellDef>Emails</th>
+                    <td mat-cell *matCellDef="let element"><button mat-raised-button color="primary" class="btn-table">Resend Emails</button></td>
+                  </ng-container>
+                
+                  <ng-container matColumnDef="handheld">
+                    <th mat-header-cell *matHeaderCellDef>Handheld</th>
+                    <td mat-cell *matCellDef="let element"><button mat-raised-button color="primary" class="btn-table">Resend Jobs</button></td>
+                  </ng-container>
+                
+                  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+                </table>
+                </div>
+            </div>
+        </div>
+      </div>
+      

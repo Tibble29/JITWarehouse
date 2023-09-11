@@ -1,0 +1,39 @@
+<div class="sidebar">
+  <div class="sidebar-content">
+    <img class="logo-header" [src]="isDarkModeEnabled() ? '../../assets/logo-light.png' : '../../assets/logo.png'" alt="Logo">
+
+    <!-- Section 1: MasterFiles -->
+    <div class="sidebar-title" (click)="toggleSection('masterFiles')">MasterFiles</div>
+    <ul class="menu" *ngIf="sections.masterFiles">
+      <li><a href="#">AKAs</a></li>
+      <li><a href="/employees">Employees</a></li>
+      <li><a href="#">Package Types</a></li>
+      <li><a href="/memos">Memos</a></li>
+      <li><a href="/vehicles">Vehicles</a></li>
+      <li><a href="#">Dealers</a></li>
+      <li><a href="#">Vehicle Type</a></li>
+      <li><a href="#">JitPOD Reasons</a></li>
+    </ul>
+
+    <!-- Section 2: Deliveries -->
+    <div class="sidebar-title" (click)="toggleSection('deliveries')">Deliveries</div>
+    <ul class="menu" *ngIf="sections.deliveries">
+      <li><a href="/delivery-dockets">Delivery Dockets</a></li>
+      <li><a href="/load-jitpod">Load JITPod</a></li>
+      <li><a href="#">Colli Contents</a></li>
+      <li><div (click)="toggleSubMenu()">Scan Goods Out</div></li>
+      <ul class="submenu" *ngIf="showSubMenu">
+        <li><a href="#">Day Shifts</a></li>
+        <li><a href="/scan-goods-out/night-shift">Night Shifts</a></li>
+      </ul>
+      <li><a href="/consignments">Find Consignment</a></li>
+      <li><a href="#">Overnight Progress</a></li>
+      <li><a href="#">Whiteboard</a></li>
+      <li><a href="/timesheets">Timesheets</a></li>
+    </ul>
+    <div class="sidebar-title" (click)="toggleSection('garage')">Garage</div>
+    <ul class="menu" *ngIf="sections.garage">
+      <li><a href="/maintain-vehicles">Vehicles</a></li>
+    </ul>
+  </div>
+</div>

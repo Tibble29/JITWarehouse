@@ -1,0 +1,78 @@
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+  
+  .card {
+    background-color: #f0f0f0;
+    padding: 10px;
+    border-radius: 5px;
+    height: 150px;
+    position: relative;
+  }
+
+  .driveable {
+    background-color: #028a0f;
+  }
+  
+  .undriveable {
+    background-color: #ff6961;
+  }
+  
+  .unknown {
+    background-color: #DAA06D;
+  }
+
+  .footer {
+    color: #FFF;
+    font-weight: 700;
+  }
+
+.date {
+    color: #FFF;
+    font-weight: 800;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+}  
+
+.content {
+    color: #FFF;
+    font-weight: 700;
+    margin-top: 10px;
+}
+
+.numberplate {
+    box-shadow: none !important;
+}
+
+.status-icon {
+  background-color: #FFF;
+  color: #000;
+  width: 40px;
+  font-size: 24px;
+  height: 40px;
+  border-radius: 30px;
+  text-align: center;
+  line-height: 1.7;
+  position: absolute;
+  left: 10px;
+  bottom: 10px;
+}
+
+.last-route {
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+}
+
+.strip {
+  font-size: 20px;
+  margin: 50px 0px 20px;
+  font-style: italic;
+}
+
+.mat-mdc-form-field{
+  width: 100% !important;
+}

@@ -1,0 +1,11 @@
+
+<div class="user-dropdown" (click)="toggleDropdown()">
+  <i class="fa fa-user"></i>
+  <div class="dropdown-menu" [ngClass]="{'show': isDropdownOpen, 'dark-mode': isDarkModeEnabled()}">
+      <ul>
+        <li (click)="toggleDarkMode()">{{theme}} Mode</li>
+        <li (click)="logout()">Logout</li>
+      </ul>
+    </div>
+  </div>
+  

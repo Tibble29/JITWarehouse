@@ -1,0 +1,176 @@
+
+<div class="page-container"> 
+    <app-header></app-header>
+      <app-sidebar></app-sidebar>
+
+<div class="section-container content-column">
+    <h2>Pick Consignment</h2>
+    <section class="options">
+
+    <div class="textbox-container content">
+    <mat-form-field>
+      <mat-label>AR Code</mat-label>
+      <input matInput [(ngModel)]="arCode">
+    </mat-form-field>
+  
+    <mat-form-field>
+      <mat-label>Pack List</mat-label>
+      <input matInput [(ngModel)]="packList">
+    </mat-form-field>
+  
+    <mat-form-field>
+      <mat-label>Case Number</mat-label>
+      <input matInput [(ngModel)]="caseNumber">
+    </mat-form-field>
+  
+    <mat-form-field>
+      <mat-label>JD Reference</mat-label>
+      <input matInput [(ngModel)]="jdReference">
+    </mat-form-field>
+  
+    <mat-form-field>
+      <mat-label>Dealer Reference</mat-label>
+      <input matInput [(ngModel)]="dealerReference">
+    </mat-form-field>
+  
+    <mat-form-field>
+      <mat-label>Packlist IN TOTE Reference</mat-label>
+      <input matInput [(ngModel)]="packlistInToteReference">
+    </mat-form-field>
+  
+    <mat-form-field>
+      <mat-label>From Date</mat-label>
+      <input matInput [matDatepicker]="fromDatepicker" [(ngModel)]="fromDate">
+      <mat-datepicker-toggle matSuffix [for]="fromDatepicker"></mat-datepicker-toggle>
+      <mat-datepicker #fromDatepicker></mat-datepicker>
+    </mat-form-field>
+  
+    <mat-form-field>
+      <mat-label>To Date</mat-label>
+      <input matInput [matDatepicker]="toDatepicker" [(ngModel)]="toDate">
+      <mat-datepicker-toggle matSuffix [for]="toDatepicker"></mat-datepicker-toggle>
+      <mat-datepicker #toDatepicker></mat-datepicker>
+    </mat-form-field>
+  
+    <button mat-raised-button color="primary" (click)="showTable()">Show Consigns</button>
+    </div>
+  </section>
+  
+  <section class="results" *ngIf="show">
+
+    <h2>Congisngment Details</h2>
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+      <!-- Barcode Column -->
+      <ng-container matColumnDef="Barcode">
+        <th mat-header-cell *matHeaderCellDef> Barcode </th>
+        <td mat-cell *matCellDef="let element" style="font-size: 12px;"> {{element.Barcode}} </td>
+      </ng-container>
+    
+      <!-- Consolidate Column -->
+      <ng-container matColumnDef="Consolidate">
+        <th mat-header-cell *matHeaderCellDef> Consolidate </th>
+        <td mat-cell *matCellDef="let element" style="font-size: 12px;"> {{element.Consolidate}} </td>
+      </ng-container>
+    
+      <!-- Case Num Column -->
+      <ng-container matColumnDef="CaseNum">
+        <th mat-header-cell *matHeaderCellDef> Case Num </th>
+        <td mat-cell *matCellDef="let element" style="font-size: 12px;"> {{element.CaseNum}} </td>
+      </ng-container>
+    
+      <!-- Pack List Column -->
+      <ng-container matColumnDef="PackList">
+        <th mat-header-cell *matHeaderCellDef> Pack List </th>
+        <td mat-cell *matCellDef="let element" style="font-size: 12px;"> {{element.PackList}} </td>
+      </ng-container>
+    
+      <!-- JD Ref Column -->
+      <ng-container matColumnDef="JDRef">
+        <th mat-header-cell *matHeaderCellDef> JD Ref </th>
+        <td mat-cell *matCellDef="let element" style="font-size: 12px;"> {{element.JDRef}} </td>
+      </ng-container>
+    
+      <!-- Type Column -->
+      <ng-container matColumnDef="Type">
+        <th mat-header-cell *matHeaderCellDef> Type </th>
+        <td mat-cell *matCellDef="let element" style="font-size: 12px;"> {{element.Type}} </td>
+      </ng-container>
+    
+      <!-- Wgt Column -->
+      <ng-container matColumnDef="Wgt">
+        <th mat-header-cell *matHeaderCellDef> Wgt </th>
+        <td mat-cell *matCellDef="let element" style="font-size: 12px;"> {{element.Wgt}} </td>
+      </ng-container>
+    
+      <!-- Size Column -->
+      <ng-container matColumnDef="Size">
+        <th mat-header-cell *matHeaderCellDef> Size </th>
+        <td mat-cell *matCellDef="let element" style="font-size: 12px;"> {{element.Size}} </td>
+      </ng-container>
+    
+      <!-- Pck Column -->
+      <ng-container matColumnDef="Pck">
+        <th mat-header-cell *matHeaderCellDef> Pck </th>
+        <td mat-cell *matCellDef="let element" style="font-size: 12px;"> {{element.Pck}} </td>
+      </ng-container>
+    
+      <!-- Status Column -->
+      <ng-container matColumnDef="Status">
+        <th mat-header-cell *matHeaderCellDef> Status </th>
+        <td mat-cell *matCellDef="let element" style="font-size: 12px;"> {{element.Status}} </td>
+      </ng-container>
+    
+      <!-- Actual Column -->
+      <ng-container matColumnDef="Actual">
+        <th mat-header-cell *matHeaderCellDef> Actual </th>
+        <td mat-cell *matCellDef="let element" style="font-size: 12px;"> {{element.Actual}} </td>
+      </ng-container>
+    
+      <!-- Dealer Column -->
+      <ng-container matColumnDef="Dealer">
+        <th mat-header-cell *matHeaderCellDef> Dealer </th>
+        <td mat-cell *matCellDef="let element" style="font-size: 12px;"> {{element.Dealer}} </td>
+      </ng-container>
+    
+      <!-- Town Column -->
+      <ng-container matColumnDef="Town">
+        <th mat-header-cell *matHeaderCellDef> Town </th>
+        <td mat-cell *matCellDef="let element" style="font-size: 12px;"> {{element.Town}} </td>
+      </ng-container>
+    
+      <!-- Transmission Column -->
+      <ng-container matColumnDef="Transmission">
+        <th mat-header-cell *matHeaderCellDef> Transmission </th>
+        <td mat-cell *matCellDef="let element" style="font-size: 12px;"> {{element.Transmission}} </td>
+      </ng-container>
+    
+      <!-- In Stock Column -->
+      <ng-container matColumnDef="InStock">
+        <th mat-header-cell *matHeaderCellDef> In Stock </th>
+        <td mat-cell *matCellDef="let element" style="font-size: 12px;"> {{element.InStock}} </td>
+      </ng-container>
+    
+      <!-- Dispatched Column -->
+      <ng-container matColumnDef="Dispatched">
+        <th mat-header-cell *matHeaderCellDef> Dispatched </th>
+        <td mat-cell *matCellDef="let element" style="font-size: 12px;"> {{element.Dispatched}} </td>
+      </ng-container>
+    
+      <!-- Consolidation Column -->
+      <ng-container matColumnDef="Consolidation">
+        <th mat-header-cell *matHeaderCellDef> Consolidation </th>
+        <td mat-cell *matCellDef="let element" style="font-size: 12px;"> {{element.Consolidation}} </td>
+      </ng-container>
+    
+      <!-- Table row definition -->
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    
+    </table>
+    
+
+  </section>
+  
+      </div>
+      </div>

@@ -1,0 +1,85 @@
+<div class="mat-elevation-z8">
+    <table mat-table [dataSource]="itemsDataSource" class="mat-elevation-z8">
+  
+      <!-- Route Column -->
+      <ng-container matColumnDef="route">
+        <th mat-header-cell *matHeaderCellDef> Route </th>
+        <td mat-cell *matCellDef="let item"  (click)="addItem(item)"> {{ item.route }} </td>
+      </ng-container>
+  
+      <!-- Route Val Column -->
+      <ng-container matColumnDef="routeVal">
+        <th mat-header-cell *matHeaderCellDef> Route Val </th>
+        <td mat-cell *matCellDef="let item"> {{ item.routeVal }} </td>
+      </ng-container>
+  
+      <!-- JD-Disp Column -->
+      <ng-container matColumnDef="jdDisp">
+        <th mat-header-cell *matHeaderCellDef> JD-Disp </th>
+        <td mat-cell *matCellDef="let item"> {{ item.jdDisp }} </td>
+      </ng-container>
+  
+      <!-- JIT-In Column -->
+      <ng-container matColumnDef="jitIn">
+        <th mat-header-cell *matHeaderCellDef> JIT-In </th>
+        <td mat-cell *matCellDef="let item"> {{ item.jitIn }} </td>
+      </ng-container>
+  
+      <!-- JIT-Disp Column -->
+      <ng-container matColumnDef="jitDisp">
+        <th mat-header-cell *matHeaderCellDef> JIT-Disp </th>
+        <td mat-cell *matCellDef="let item"> {{ item.jitDisp }} </td>
+      </ng-container>
+  
+      <!-- Fly Column -->
+      <ng-container matColumnDef="fly">
+        <th mat-header-cell *matHeaderCellDef> Fly </th>
+        <td mat-cell *matCellDef="let item"> {{ item.fly }} </td>
+      </ng-container>
+  
+      <!-- Forestry Column -->
+      <ng-container matColumnDef="forestry">
+        <th mat-header-cell *matHeaderCellDef> Forestry </th>
+        <td mat-cell *matCellDef="let item"> {{ item.forestry }} </td>
+      </ng-container>
+  
+      <!-- Vapormatic Column -->
+      <ng-container matColumnDef="vapormatic">
+        <th mat-header-cell *matHeaderCellDef> Vapormatic </th>
+        <td mat-cell *matCellDef="let item"> {{ item.vapormatic }} </td>
+      </ng-container>
+  
+      <!-- Trunk Column -->
+      <ng-container matColumnDef="trunk">
+        <th mat-header-cell *matHeaderCellDef> Trunk </th>
+        <td mat-cell *matCellDef="let item"> {{ item.trunk }} </td>
+      </ng-container>
+  
+      <!-- Sub-Trunk Column -->
+      <ng-container matColumnDef="subTrunk">
+        <th mat-header-cell *matHeaderCellDef> Sub-Trunk </th>
+        <td mat-cell *matCellDef="let item"> {{ item.subTrunk }} </td>
+      </ng-container>
+  
+      <!-- This-Route Column -->
+      <ng-container matColumnDef="thisRoute">
+        <th mat-header-cell *matHeaderCellDef> This-Route </th>
+        <td mat-cell *matCellDef="let item"> {{ item.thisRoute }} </td>
+      </ng-container>
+  
+      <!-- This-Docket Column -->
+      <ng-container matColumnDef="thisDocket">
+        <th mat-header-cell *matHeaderCellDef> This-Docket </th>
+        <td mat-cell *matCellDef="let item"> {{ item.thisDocket }} </td>
+      </ng-container>
+  
+      <!-- Frozen Column -->
+      <ng-container matColumnDef="frozen">
+        <th mat-header-cell *matHeaderCellDef> Frozen </th>
+        <td mat-cell *matCellDef="let item"> {{ item.frozen }} </td>
+      </ng-container>
+  
+      <tr mat-header-row *matHeaderRowDef="itemsDisplayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: itemsDisplayedColumns;"></tr>
+    </table>
+  </div>

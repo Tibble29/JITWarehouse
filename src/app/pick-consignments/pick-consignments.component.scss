@@ -1,0 +1,41 @@
+.section-container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .textbox-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px; 
+  }
+  
+  
+  .textbox-container > mat-form-field {
+    flex: 0 0 50%; 
+  }
+  
+  .tab {
+    cursor: pointer;
+  }
+  
+  .content {
+    transition: opacity 0.5s ease-in-out;
+    overflow: hidden;
+  }
+  
+  .hidden {
+    max-height: 0;
+    padding: 0;
+  }
+  
+  .options {
+    border: 1px solid lightgray;
+    padding: 20px;
+    border-radius: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+
+.mat-table-custom {
+  font-size: 12px !important;
+}

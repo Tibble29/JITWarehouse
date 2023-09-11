@@ -1,0 +1,45 @@
+
+<div class="page-container">  
+  <app-header></app-header>
+    <app-sidebar></app-sidebar>
+    
+        <div class="content-column">
+  
+          <h1>Employees</h1>
+          <p class="subtitle">Add and Edit Employees</p>
+  
+          <button class="btn-primary">Create Employee</button>
+
+          <mat-form-field>
+            <input matInput (keyup)="applyFilter($event)" placeholder="Search" class="filter">
+          </mat-form-field>
+  
+          <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+              <ng-container matColumnDef="name">
+                <th mat-header-cell *matHeaderCellDef>Name</th>
+                <td mat-cell *matCellDef="let employee" class="registration-column">{{ employee.name }}</td>
+              </ng-container>
+
+              <ng-container matColumnDef="id">
+                <th mat-header-cell *matHeaderCellDef>ID</th>
+                <td mat-cell *matCellDef="let employee" class="registration-column">{{ employee.id }}</td>
+              </ng-container>
+
+
+              <ng-container matColumnDef="view">
+                  <th mat-header-cell *matHeaderCellDef>View</th>
+                  <td mat-cell *matCellDef="let vehicle"><i class="fa fa-info-circle" aria-hidden="true"></i>                </td>
+                </ng-container>
+            
+              <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+              <tr mat-row *matRowDef="let vehicle; columns: displayedColumns"></tr>
+            </table>
+            <mat-paginator [pageSizeOptions]="[10, 20, 50]" showFirstLastButtons class="paignation"></mat-paginator>
+
+    
+        </div>
+        <div class="hamburger-menu">
+          <i class="fa fa-bars"></i>
+        </div>
+      </div>
+      

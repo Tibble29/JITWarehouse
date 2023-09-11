@@ -1,0 +1,52 @@
+
+<div class="page-container"> 
+  <app-header></app-header> 
+  <app-sidebar></app-sidebar>
+  
+      <div class="content-column">
+
+        <h1>Memos</h1>
+        <p class="subtitle">Send Memos To Users Though JITPod</p>
+
+<!-- message-form.component.html -->
+<div class="message-form">
+    <div class="form-group">
+      <label for="memoType">Memo Type:</label>
+      <select id="memoType" name="memoType" [(ngModel)]="selectedMemoType">
+        <option value="1">Employees</option>
+        <option value="2">Vehicles</option>
+        <option value="3">Dealers</option>
+        <option value="4">Routes</option>
+        <option value="5">Warehouse</option>
+        <option value="6">Long Term Dealers</option>
+        <option value="7">Collis</option>
+        <option value="8">DRGA</option>
+      </select>
+    </div>
+  
+    <div class="form-group">
+      <label for="name">Name:</label>
+      <select id="name" name="name" [(ngModel)]="selectedName">
+        <option value="John Doe">John Penny</option>
+        <option value="Jane Smith">Jane Smith</option>
+        <option value="Robert Johnson">Robert Johnson</option>
+        <option value="Emily Davis">Emily Davis</option>
+        <option value="Michael Wilson">Michael Wilson</option>
+      </select>
+    </div>
+  
+    <div class="form-group">
+      <label for="message">Message:</label>
+      <textarea id="message" name="message" [(ngModel)]="message"></textarea>
+    </div>
+  
+    <button (click)="submitMessage()">Send</button>
+  </div>
+  
+  
+      </div>
+      <div class="hamburger-menu">
+        <i class="fa fa-bars"></i>
+      </div>
+    </div>
+    

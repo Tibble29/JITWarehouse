@@ -1,0 +1,22 @@
+@import "~font-awesome/css/font-awesome.min.css";
+
+
+.sidebar {
+    flex: 0 0 auto;
+    background-color: #FFF;
+    overflow-y: auto;
+    width: 250px;
+  }
+  
+  .sidebar-content {
+    position: fixed;
+    width: 250px;
+  }
+
+  .logo-header {
+    max-width: 150px;
+    margin: auto;
+    padding: 0px 50px;
+    margin-top: 20px;
+  }
+  

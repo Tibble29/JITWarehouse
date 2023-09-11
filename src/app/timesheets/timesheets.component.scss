@@ -1,0 +1,37 @@
+.table-container {
+    overflow-x: auto;
+    max-width: 100%;
+  }
+  
+  .mat-table {
+    table-layout: fixed;
+  }
+  
+  .mat-header-cell,
+  .mat-cell {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  
+  .mat-header-cell:first-child,
+  .mat-cell:first-child {
+    position: sticky;
+    left: 0;
+    z-index: 1;
+    background-color: #fff;
+    box-shadow: 2px 0 5px -1px rgba(0, 0, 0, 0.2);
+  }
+  
+  .green-cell {
+    background-color: #AFE1AF;
+  }
+  
+  .red-cell {
+    background-color: #FAA0A0;
+  }
+
+  .list {
+    padding: 20px 0px;
+  }
+  

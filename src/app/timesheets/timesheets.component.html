@@ -1,0 +1,70 @@
+
+<div class="page-container">  
+    <app-header></app-header>
+    <app-sidebar></app-sidebar>
+    
+        <div class="content-column">
+  
+          <h1  class="registration-column">Timesheets</h1>
+
+            <table mat-table [dataSource]="dataSource" class="mat-elevation-z8"> 
+              <!-- Fixed first column -->
+              <ng-container matColumnDef="status">
+                <th mat-header-cell *matHeaderCellDef>Status</th>
+                <td mat-cell (click)="openBottomSheet(bottomSheetTemplate)" *matCellDef="let row" [ngClass]="getTableCellClass(row.status)">{{ row.status }}
+                    <mat-menu #revisionMenu="matMenu">
+                        <button mat-menu-item (click)="openBottomSheet(bottomSheetTemplate)">Revise</button>
+                      </mat-menu>
+                </td>
+              </ng-container>
+          
+              <!-- Scrollable columns -->
+              <ng-container matColumnDef="employee">
+                <th mat-header-cell *matHeaderCellDef>Employee</th>
+                <td mat-cell (click)="openBottomSheet(bottomSheetTemplate)" *matCellDef="let row">{{ row.employee }}</td>
+              </ng-container>
+              <ng-container matColumnDef="drive">
+                <th mat-header-cell *matHeaderCellDef>Drive</th>
+                <td mat-cell (click)="openBottomSheet(bottomSheetTemplate)" *matCellDef="let row">{{ row.drive }}</td>
+              </ng-container>
+              <ng-container matColumnDef="face">
+                <th mat-header-cell *matHeaderCellDef>Face</th>
+                <td mat-cell (click)="openBottomSheet(bottomSheetTemplate)" *matCellDef="let row">{{ row.face }}</td>
+              </ng-container>
+              <ng-container matColumnDef="warehouse">
+                <th mat-header-cell *matHeaderCellDef>Warehouse</th>
+                <td mat-cell (click)="openBottomSheet(bottomSheetTemplate)" *matCellDef="let row">{{ row.warehouse }}</td>
+              </ng-container>
+              <ng-container matColumnDef="garage">
+                <th mat-header-cell *matHeaderCellDef>Garage</th>
+                <td mat-cell (click)="openBottomSheet(bottomSheetTemplate)" *matCellDef="let row">{{ row.garage }}</td>
+              </ng-container>
+              <ng-container matColumnDef="otherStaff">
+                <th mat-header-cell *matHeaderCellDef>Other Staff</th>
+                <td mat-cell (click)="openBottomSheet(bottomSheetTemplate)" *matCellDef="let row">{{ row.otherStaff }}</td>
+              </ng-container>
+              <ng-container matColumnDef="absent">
+                <th mat-header-cell *matHeaderCellDef>Absent</th>
+                <td mat-cell (click)="openBottomSheet(bottomSheetTemplate)" *matCellDef="let row">{{ row.absent }}</td>
+              </ng-container>
+              <ng-container matColumnDef="memos">
+                <th mat-header-cell *matHeaderCellDef>Memos</th>
+                <td mat-cell (click)="openBottomSheet(bottomSheetTemplate)" *matCellDef="let row">{{ row.memos }}</td>
+              </ng-container>
+              <ng-container matColumnDef="adminMemos">
+                <th mat-header-cell *matHeaderCellDef>Admin Memos</th>
+                <td mat-cell (click)="openBottomSheet(bottomSheetTemplate)" *matCellDef="let row">{{ row.adminMemos }}</td>
+              </ng-container>
+              <!-- Add more columns as needed -->
+          
+              <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+              <tr mat-row *matRowDef="let vehicle; columns: displayedColumns"></tr>
+            </table>
+          </div>
+          </div>
+          
+          <ng-template #bottomSheetTemplate>
+            <div class="list">            
+                <span matListItemTitle>Revise</span>
+            </div>
+          </ng-template>

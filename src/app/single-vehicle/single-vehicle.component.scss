@@ -1,0 +1,96 @@
+@import url('https://fonts.cdnfonts.com/css/uk-number-plate');
+
+  
+  h1 {
+    font-size: 2rem;
+  }
+  
+  .textbox-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    margin-right: 20px;
+  }
+  
+  label {
+    font-weight: bold;
+  }
+  
+  input[type="text"] {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+  }
+  
+
+.registration-column {
+    background: linear-gradient(to bottom, #f8d038 0%, #f5ca2e 100%);
+    padding: 0.25em 1em 0.25em 1.75em;
+    font-weight: bold;
+    font-size: 40px;
+    border-radius: 5px;
+    border: 1px solid #000;
+    box-shadow: 1px 1px 1px #ddd;
+    position: relative;
+    font-family: 'UKNumberPlate', sans-serif; 
+    text-align: center;
+    width: 200px;
+    padding: 10px 0px 10px 0px;
+  }
+  
+ 
+  .registration-column:after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 7px;
+    left: 5px;
+    width: 20px;
+    height: 20px;
+    border-radius: 30px;
+    border: 1px dashed #f8d038;
+  }
+  
+  .circle {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 14px;
+    background-color: #3EB6A2;
+    text-align: center;
+    line-height: 3em;
+    display: inline-block;
+  }
+
+  .comment-head {
+    display: inline-block;
+    margin-left: 10px;
+  }
+
+  .comment {
+    border: 1px solid lightgray;
+    padding: 10px;
+    margin-bottom: 20px;
+  }
+
+  mat-form-field {
+    width: 100%;
+  }
+
+  h4 {
+    margin-top: 50px;
+  }
+  
+  .button-comment {
+    padding: 20px;
+    float: right;
+    margin-bottom: 20px !important;
+  }
+
+  .mat-mdc-tab-header {
+    margin-bottom: 20px;
+  }
+  

@@ -1,0 +1,193 @@
+
+<div class="page-container">  
+  <app-header></app-header>
+  <app-sidebar></app-sidebar>
+  
+      <div class="content-column">
+
+        <h1  class="registration-column">{{id}}</h1>
+        <p class="subtitle">Last Updated: 21/1/2023</p>
+
+
+        <div class="textbox-container">
+            <label for="registrationNum">Registration Num</label>
+            <input type="text" id="registrationNum" [(ngModel)]="id" />
+        
+            <label for="satNavReg">Sat Nav Reg</label>
+            <input type="text" id="satNavReg" />
+        
+            <label for="shortReg">Short Reg</label>
+            <input type="text" id="shortReg" />
+          </div>
+        
+          <mat-tab-group>
+            <mat-tab label="General">
+              <div class="textbox-container">
+
+                <label>ID</label>
+                <mat-form-field>
+                  <input matInput placeholder="ID" [(ngModel)]="id">
+                </mat-form-field>
+
+                <label>Active?</label>
+                <mat-checkbox></mat-checkbox>
+
+              
+
+                <label>Highest Mileage</label>
+                <mat-form-field>
+                  <input matInput placeholder="Highest Mileage" >
+                </mat-form-field>
+
+                <label>Uses Kilometers</label>
+                <mat-checkbox></mat-checkbox>
+
+                <label>Allow Pod?</label>
+                <mat-checkbox></mat-checkbox>
+
+                <mat-label>Vehicle Type</mat-label>
+                <mat-form-field>
+                  <mat-label>Vehicle Type</mat-label>
+                  <mat-select>
+                    <mat-option value="land rover">Land Rover</mat-option>
+                    <mat-option value="fiesta">Fiesta</mat-option>
+                    <mat-option value="truck">Truck</mat-option>
+                  </mat-select>
+                </mat-form-field>
+
+                <mat-label>Status</mat-label>
+                <mat-form-field>
+                  <mat-label>Status</mat-label>
+                  <mat-select>
+                    <mat-option value="available">Available</mat-option>
+                    <mat-option value="none">None</mat-option>
+                  </mat-select>
+                </mat-form-field>
+
+                <mat-label>Carry Capacity</mat-label>
+                <mat-form-field>
+                  <input matInput placeholder="Carry Capacity">
+                </mat-form-field>
+
+                <mat-label>Gross Weight</mat-label>
+                <mat-form-field>
+                  <input matInput placeholder="Gross Wgt">
+                </mat-form-field>
+
+                <mat-label>Height (Expected format - 6'4&quot;(2.3m))</mat-label>
+                <mat-form-field>
+                  <input matInput placeholder="Height">
+                </mat-form-field>
+
+                <mat-label>Max Speed (Expected format - 62mph(85kph))</mat-label>
+                <mat-form-field>
+                  <input matInput placeholder="Max Speed">
+                </mat-form-field>
+
+                <mat-label>Fuel 1</mat-label>
+                <mat-form-field>
+                  <mat-label>Fuel 1</mat-label>
+                  <mat-select [(ngModel)]="fuel1">
+                    <mat-option value="Petrol">Petrol</mat-option>
+                    <mat-option value="LPG">LPG</mat-option>
+                    <mat-option value="None">None</mat-option>
+                  </mat-select>
+                </mat-form-field>
+
+                <mat-label>Fuel 2</mat-label>
+                <mat-form-field>
+                  <mat-label>Fuel 2</mat-label>
+                  <mat-select [(ngModel)]="fuel2">
+                    <mat-option value="Petrol">Petrol</mat-option>
+                    <mat-option value="LPG">LPG</mat-option>
+                    <mat-option value="None">None</mat-option>
+                  </mat-select>
+                </mat-form-field>
+
+                <mat-label>Sat Nav Multiplier</mat-label>
+                <mat-form-field>
+                  <input matInput placeholder="Sat Nav Multiplier">
+                </mat-form-field>
+            </div>              
+              
+            </mat-tab>
+            <mat-tab label="Ownership">
+              <div class="textbox-container">
+                <label>Owned</label>
+                <mat-checkbox class="example-margin"></mat-checkbox>
+
+            
+                <label>Registration Date</label>
+                <mat-form-field>
+                  <input matInput [matDatepicker]="registrationDatePicker" placeholder="Choose a date">
+                  <mat-datepicker-toggle matSuffix [for]="registrationDatePicker"></mat-datepicker-toggle>
+                  <mat-datepicker #registrationDatePicker></mat-datepicker>
+                </mat-form-field>
+            
+                <label>Purchase Date</label>
+                <mat-form-field>
+                  <input matInput [matDatepicker]="purchaseDatePicker" placeholder="Choose a date">
+                  <mat-datepicker-toggle matSuffix [for]="purchaseDatePicker"></mat-datepicker-toggle>
+                  <mat-datepicker #purchaseDatePicker></mat-datepicker>
+                </mat-form-field>
+            
+                <label>Disposal Method</label>
+                <mat-form-field>
+                  <mat-select>
+                    <mat-option value="currentlyInUse">Currently In Use</mat-option>
+                    <mat-option value="sold">Sold</mat-option>
+                    <mat-option value="scrapped">Scrapped</mat-option>
+                    <mat-option value="offHire">OffHire</mat-option>
+                  </mat-select>
+                </mat-form-field>
+            
+                <label>Sold Date</label>
+                <mat-form-field>
+                  <input matInput [matDatepicker]="soldDatePicker" placeholder="Choose a date">
+                  <mat-datepicker-toggle matSuffix [for]="soldDatePicker"></mat-datepicker-toggle>
+                  <mat-datepicker #soldDatePicker></mat-datepicker>
+                </mat-form-field>
+              </div>
+            </mat-tab>
+            
+            
+            <mat-tab label="Numbers">
+              <!-- Numbers tab content here -->
+            </mat-tab>
+
+            <mat-tab label="Tail Lift">
+            </mat-tab>
+            <mat-tab label="Comments">
+              <div>
+                <mat-form-field appearance="fill" class="full-width">
+                  <textarea matInput [(ngModel)]="newComment" placeholder="Add a comment"></textarea>
+                </mat-form-field>
+              </div>              
+              <div>
+              <button mat-raised-button color="primary" (click)="addComment()" class="button-comment">Add Comment</button>              
+              </div>
+              <div>
+
+                <h4>Comments:</h4>
+
+                  <div class="comment" *ngFor="let comment of comments">
+                    <div class="circle">
+                      {{ comment.name.charAt(0) }}                      
+                    </div>  
+                    
+                    <p class="comment-head">{{comment.name}} - {{comment.date | date}}</p>
+                    <p class="comment-body">{{comment.text }}</p>
+                  </div>
+
+              </div>
+              
+            </mat-tab>
+          </mat-tab-group>
+        </div>
+  
+  
+      </div>
+      <div class="hamburger-menu">
+        <i class="fa fa-bars"></i>
+      </div>
+    
